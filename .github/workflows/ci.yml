@@ -43,7 +43,8 @@ jobs:
 
       - name: Run Pytest Test Suite
         working-directory: ./ai-service
-        run: pytest tests/
+        run: |
+          python -m pytest tests/
 
   frontend-build:
     name: Frontend React & TypeScript Build
