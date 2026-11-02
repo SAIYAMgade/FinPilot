@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="100%" stop-color="#0a1020" />
+    </linearGradient>
+
+    <linearGradient id="boxClient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="boxCore" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="boxAI" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#2e1065" stop-opacity="0.7" />
+    </linearGradient>
+
+    <linearGradient id="boxData" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#172554" stop-opacity="0.7" />
+    </linearGradient>
+
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', Consolas, monospace; }
+    .sans { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .tier-header { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    .node-title { font-size: 13px; font-weight: 700; fill: #ffffff; }
+    .node-sub { font-size: 10px; fill: #94a3b8; }
+    .arrow-text { font-size: 10px; fill: #64748b; font-family: 'JetBrains Mono', monospace; }
+  </style>
+
+  <rect width="1200" height="680" fill="url(#bg2)" />
+
+  <!-- Title -->
+  <g transform="translate(60, 45)">
+    <text x="0" y="0" class="sans" font-size="22" font-weight="800" fill="#f8fafc">FinPilot Detailed System Component Architecture</text>
+    <text x="0" y="24" class="sans" font-size="12" fill="#64748b">Service boundaries, transactional boundaries, event relayer, and controlled AI investigation loop</text>
+  </g>
+
+  <!-- Tier 1: Client Layer (Top) -->
+  <g transform="translate(60, 95)" filter="url(#shadow2)">
+    <rect width="1080" height="85" rx="12" fill="url(#boxClient)" stroke="#334155" stroke-width="1.5" />
+    <text x="24" y="24" class="mono tier-header" fill="#38bdf8">Presentation Tier (React 18 + TypeScript + Vite)</text>
+    
+    <g transform="translate(24, 38)">
+      <rect width="240" height="34" rx="6" fill="#0b1120" stroke="#1e293b" />
+      <text x="120" y="21" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#e2e8f0">18 Enterprise Route Views</text>
+    </g>
+    <g transform="translate(280, 38)">
+      <rect width="250" height="34" rx="6" fill="#0b1120" stroke="#1e293b" />
+      <text x="125" y="21" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#e2e8f0">Recharts Telemetry &amp; KPIs</text>
+    </g>
+    <g transform="translate(546, 38)">
+      <rect width="250" height="34" rx="6" fill="#0b1120" stroke="#1e293b" />
+      <text x="125" y="21" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#e2e8f0">Maker-Checker Authorization UI</text>
+    </g>
+    <g transform="translate(812, 38)">
+      <rect width="244" height="34" rx="6" fill="#0b1120" stroke="#1e293b" />
+      <text x="122" y="21" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#e2e8f0">JWT Interceptor &amp; RBAC Guards</text>
+    </g>
+  </g>
+
+  <!-- Arrow Client -> Core -->
+  <g stroke="#38bdf8" stroke-width="1.5" fill="none">
+    <line x1="600" y1="180" x2="600" y2="215" marker-end="url(#arrowBlue)" />
+    <text x="610" y="202" class="arrow-text">HTTPS / REST (JWT Bearer Auth)</text>
+  </g>
+
+  <!-- Tier 2: Core Backend Engine (Middle Left) -->
+  <g transform="translate(60, 220)" filter="url(#shadow2)">
+    <rect width="680" height="260" rx="14" fill="url(#boxCore)" stroke="#059669" stroke-width="1.5" stroke-opacity="0.6" />
+    <text x="24" y="26" class="mono tier-header" fill="#34d399">FinPilot Core Service (Java 17/21 / Spring Boot 3.3)</text>
+
+    <!-- Services Grid -->
+    <g transform="translate(24, 45)">
+      <rect width="195" height="85" rx="8" fill="#061f18" stroke="#047857" stroke-width="1" />
+      <text x="14" y="25" class="sans node-title">Transaction Service</text>
+      <text x="14" y="45" class="sans node-sub">Idempotency check</text>
+      <text x="14" y="60" class="sans node-sub">CSV bulk ingestion feed</text>
+      <text x="14" y="75" class="sans node-sub">Status lifecycle tracker</text>
+    </g>
+
+    <g transform="translate(235, 45)">
+      <rect width="205" height="85" rx="8" fill="#061f18" stroke="#047857" stroke-width="1" />
+      <text x="14" y="25" class="sans node-title">Double-Entry Ledger</text>
+      <text x="14" y="45" class="sans node-sub">Σ Debits = Σ Credits rule</text>
+      <text x="14" y="60" class="sans node-sub">Immutable journal entries</text>
+      <text x="14" y="75" class="sans node-sub">Real-time trial balance</text>
+    </g>
+
+    <g transform="translate(456, 45)">
+      <rect width="200" height="85" rx="8" fill="#061f18" stroke="#047857" stroke-width="1" />
+      <text x="14" y="25" class="sans node-title">Reconciliation Matcher</text>
+      <text x="14" y="45" class="sans node-sub">Level 1: Exact Match</text>
+      <text x="14" y="60" class="sans node-sub">Level 2: Amount Mismatch</text>
+      <text x="14" y="75" class="sans node-sub">Level 3: Date Tolerance</text>
+    </g>
+
+    <g transform="translate(24, 145)">
+      <rect width="195" height="90" rx="8" fill="#061f18" stroke="#047857" stroke-width="1" />
+      <text x="14" y="25" class="sans node-title">Exception Hub</text>
+      <text x="14" y="45" class="sans node-sub">Discrepancy detection</text>
+      <text x="14" y="60" class="sans node-sub">Analyst assignment queue</text>
+      <text x="14" y="75" class="sans node-sub">Audit-logged resolution</text>
+    </g>
+
+    <g transform="translate(235, 145)">
+      <rect width="205" height="90" rx="8" fill="#061f18" stroke="#047857" stroke-width="1" />
+      <text x="14" y="25" class="sans node-title">Approval Center</text>
+      <text x="14" y="45" class="sans node-sub">Maker-Checker gatekeeper</text>
+      <text x="14" y="60" class="sans node-sub">Strict no self-approval</text>
+      <text x="14" y="75" class="sans node-sub">Deterministic execution</text>
+    </g>
+
+    <g transform="translate(456, 145)">
+      <rect width="200" height="90" rx="8" fill="#061f18" stroke="#047857" stroke-width="1" />
+      <text x="14" y="25" class="sans node-title">Transactional Outbox</text>
+      <text x="14" y="45" class="sans node-sub">ACID event persistence</text>
+      <text x="14" y="60" class="sans node-sub">Scheduled polling relayer</text>
+      <text x="14" y="75" class="sans node-sub">Kafka delivery backoff</text>
+    </g>
+  </g>
+
+  <!-- Tier 3: AI Investigation Engine (Middle Right) -->
+  <g transform="translate(770, 220)" filter="url(#shadow2)">
+    <rect width="370" height="260" rx="14" fill="url(#boxAI)" stroke="#9333ea" stroke-width="1.5" stroke-opacity="0.6" />
+    <text x="24" y="26" class="mono tier-header" fill="#c084fc">AI Engine (Python / LangGraph)</text>
+
+    <g transform="translate(20, 45)">
+      <rect width="330" height="35" rx="6" fill="#1e1035" stroke="#7e22ce" stroke-width="1" />
+      <text x="14" y="22" class="sans" font-size="11" font-weight="700" fill="#e9d5ff">Investigation Agent &bull; Context Analysis</text>
+    </g>
+    <g transform="translate(20, 86)">
+      <rect width="330" height="35" rx="6" fill="#1e1035" stroke="#7e22ce" stroke-width="1" />
+      <text x="14" y="22" class="sans" font-size="11" font-weight="700" fill="#e9d5ff">Evidence Agent &bull; Authoritative Citations</text>
+    </g>
+    <g transform="translate(20, 127)">
+      <rect width="330" height="35" rx="6" fill="#1e1035" stroke="#7e22ce" stroke-width="1" />
+      <text x="14" y="22" class="sans" font-size="11" font-weight="700" fill="#e9d5ff">Root Cause Agent &bull; Probability Deduction</text>
+    </g>
+    <g transform="translate(20, 168)">
+      <rect width="330" height="35" rx="6" fill="#1e1035" stroke="#7e22ce" stroke-width="1" />
+      <text x="14" y="22" class="sans" font-size="11" font-weight="700" fill="#e9d5ff">Policy Validation Agent &bull; Compliance Matrix</text>
+    </g>
+    <g transform="translate(20, 209)">
+      <rect width="330" height="35" rx="6" fill="#1e1035" stroke="#7e22ce" stroke-width="1" />
+      <text x="14" y="22" class="sans" font-size="11" font-weight="700" fill="#e9d5ff">Resolution Agent &bull; Draft Adjustment Proposal</text>
+    </g>
+  </g>
+
+  <!-- Horizontal Connection Core <-> AI -->
+  <g stroke="#a855f7" stroke-width="1.5" stroke-dasharray="3 3" fill="none">
+    <line x1="740" y1="350" x2="770" y2="350" />
+  </g>
+
+  <!-- Tier 4: Data & Messaging (Bottom) -->
+  <g transform="translate(60, 520)" filter="url(#shadow2)">
+    <rect width="1080" height="110" rx="14" fill="url(#boxData)" stroke="#1d4ed8" stroke-width="1.5" stroke-opacity="0.5" />
+    <text x="24" y="25" class="mono tier-header" fill="#60a5fa">Persistence, Cache &amp; Distributed Event Streaming</text>
+
+    <g transform="translate(24, 40)">
+      <rect width="320" height="52" rx="8" fill="#081836" stroke="#1e40af" stroke-width="1" />
+      <text x="16" y="24" class="sans node-title">PostgreSQL 16</text>
+      <text x="16" y="40" class="sans node-sub">ACID, NUMERIC(19,4), Flyway migrations</text>
+    </g>
+
+    <g transform="translate(370, 40)">
+      <rect width="320" height="52" rx="8" fill="#081836" stroke="#1e40af" stroke-width="1" />
+      <text x="16" y="24" class="sans node-title">Redis 7 Distributed Cache</text>
+      <text x="16" y="40" class="sans node-sub">Idempotency deduplication &amp; locks</text>
+    </g>
+
+    <g transform="translate(716, 40)">
+      <rect width="340" height="52" rx="8" fill="#081836" stroke="#1e40af" stroke-width="1" />
+      <text x="16" y="24" class="sans node-title">Apache Kafka Event Bus</text>
+      <text x="16" y="40" class="sans node-sub">Topics: transactions, reconciliation, approvals</text>
+    </g>
+  </g>
+</svg>

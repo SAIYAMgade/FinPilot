@@ -1,7 +1,11 @@
+<p align="center">
+  <img src="docs/images/finpilot-hero.svg" width="100%" alt="FinPilot Enterprise Financial Operations Platform" />
+</p>
+
 # FinPilot ⚡
 ### Enterprise Financial Operations, Double-Entry Ledger & Agentic Reconciliation Platform
 
-[![CI Pipeline](https://github.com/finpilot/finpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/finpilot/finpilot/actions/workflows/ci.yml)
+[![CI Pipeline](https://github.com/SAIYAMgade/FinPilot/actions/workflows/ci.yml/badge.svg)](https://github.com/SAIYAMgade/FinPilot/actions/workflows/ci.yml)
 [![Java 17/21](https://img.shields.io/badge/Java-17%20%2F%2021-ED8B00?logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Spring Boot 3.3](https://img.shields.io/badge/Spring%20Boot-3.3.4-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://python.org/)
@@ -28,6 +32,10 @@ Modern financial operations teams process millions of transactions across dispar
 ---
 
 ## 2. System Architecture
+
+<p align="center">
+  <img src="docs/images/architecture-graph.svg" width="100%" alt="FinPilot Architecture Diagram" />
+</p>
 
 ```mermaid
 flowchart TB
@@ -106,8 +114,8 @@ Launch all subsystems (Postgres, Redis, Zookeeper, Kafka, Spring Boot backend, F
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/finpilot/finpilot.git
-cd finpilot
+git clone https://github.com/SAIYAMgade/FinPilot.git
+cd FinPilot
 
 # 2. Start container stack
 docker compose up -d --build
